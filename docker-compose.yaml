@@ -1,0 +1,10 @@
+version: "2.0"
+services:
+  "tws":
+    image: alekna/ib-tws
+    environment:
+      - TZ=Europe/London
+    logging:
+      driver: "none"
+    ports:
+      - "5901:5900"
