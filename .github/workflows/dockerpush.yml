@@ -1,6 +1,9 @@
 name: Publish docker image
 
 on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 5 * * 1'
   push:
     branches:
       - master
@@ -10,24 +13,22 @@ env:
     REPO: ib-tws
 
 jobs:
-  push:
+  build-and-publish:
     runs-on: ubuntu-latest
-    if: github.event_name == 'push'
-
     steps:
       - uses: actions/checkout@v2
-
+  
       - name: Build image
         run: docker build . --file Dockerfile --tag image
-
+  
       - name: Log into registry
         run: echo "${{ secrets.DOCKER_TOKEN }}" | docker login -u $USERNAME --password-stdin
-
+  
       - name: Push image
         run: |
           IMAGE_ID=$USERNAME/$REPO
           VERSION=$(date +%Y%m%d)
-
+  
           docker tag image $IMAGE_ID:latest
           docker tag image $IMAGE_ID:$VERSION
           docker push $IMAGE_ID:$VERSION
