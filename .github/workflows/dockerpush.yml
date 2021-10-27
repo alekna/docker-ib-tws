@@ -2,11 +2,6 @@ name: Publish docker image
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '0 21 * * SUN'
-  push:
-    branches:
-      - master
 
 env:
     USERNAME: alekna
