@@ -3,9 +3,10 @@ services:
   "tws":
     image: alekna/ib-tws
     environment:
-      - TZ=Europe/London
+      - TZ=Europe/Vilnius
     shm_size: "512mb"
     logging:
       driver: "none"
     ports:
       - "5901:5900"
+      - "7497:7497"
