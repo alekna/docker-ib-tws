@@ -2,8 +2,6 @@ version: "2.0"
 services:
   "tws":
     image: alekna/ib-tws
-    environment:
-      - TZ=Europe/Vilnius
     shm_size: "512mb"
     ulimits:
       nofile:
