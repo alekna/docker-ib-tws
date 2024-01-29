@@ -5,6 +5,10 @@ services:
     environment:
       - TZ=Europe/Vilnius
     shm_size: "512mb"
+    ulimits:
+      nofile:
+        soft: "65536"
+        hard: "65536"
     logging:
       driver: "none"
     ports:
