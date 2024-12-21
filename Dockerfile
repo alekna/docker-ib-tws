@@ -6,10 +6,10 @@ RUN apt-get update; \
 
 RUN mkdir /root/Desktop
 
-RUN curl -sO https://download2.interactivebrokers.com/installers/tws/latest/tws-latest-linux-x64.sh; \
-    echo "/root/Jts" | sh /tws-latest-linux-x64.sh; \
-    rm /tws-latest-linux-x64.sh
+RUN curl -sO https://download2.interactivebrokers.com/installers/tws/stable/tws-stable-linux-x64.sh; \
+    echo "/root/Jts" | sh /tws-stable-linux-x64.sh; \
+    rm /tws-stable-linux-x64.sh
 
-RUN curl -sO https://download2.interactivebrokers.com/installers/ibgateway/latest-standalone/ibgateway-latest-standalone-linux-x64.sh; \
-    echo "/root/Jts/ibgateway" | sh /ibgateway-latest-standalone-linux-x64.sh; \
-    rm /ibgateway-latest-standalone-linux-x64.sh
+RUN curl -sO https://download2.interactivebrokers.com/installers/ibgateway/stable-standalone/ibgateway-stable-standalone-linux-x64.sh; \
+    echo "/root/Jts/ibgateway" | sh /ibgateway-stable-standalone-linux-x64.sh; \
+    rm /ibgateway-stable-standalone-linux-x64.sh
