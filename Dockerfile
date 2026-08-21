@@ -36,6 +36,6 @@ RUN wget -q https://download2.interactivebrokers.com/installers/tws/stable/tws-s
     rm /tmp/tws-installer.sh
 
 # 5. Install IB Gateway
-RUN wget -q https://download2.interactivebrokers.com/installers/ibgateway/stable-standalone/ibgateway-stable-standalone-linux-x64.sh -O /tmp/ibgateway-installer.sh && \
+RUN wget -q https://download2.interactivebrokers.com/installers/ibgateway/latest-standalone/ibgateway-latest-standalone-linux-x64.sh -O /tmp/ibgateway-installer.sh && \
     sh /tmp/ibgateway-installer.sh -q -dir /root/Jts/ibgateway && \
     rm /tmp/ibgateway-installer.sh
